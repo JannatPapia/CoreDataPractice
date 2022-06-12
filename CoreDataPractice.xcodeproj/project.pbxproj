@@ -14,6 +14,8 @@
 		37A6A5132855098300DC238B /* CoreDataPracticeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A6A5122855098300DC238B /* CoreDataPracticeTests.swift */; };
 		37A6A51D2855098300DC238B /* CoreDataPracticeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A6A51C2855098300DC238B /* CoreDataPracticeUITests.swift */; };
 		37A6A51F2855098300DC238B /* CoreDataPracticeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A6A51E2855098300DC238B /* CoreDataPracticeUITestsLaunchTests.swift */; };
+		37A6A52D28550A5500DC238B /* SimpleTodoModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 37A6A52B28550A5500DC238B /* SimpleTodoModel.xcdatamodeld */; };
+		37A6A5302855138900DC238B /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A6A52F2855138900DC238B /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		37A6A5182855098300DC238B /* CoreDataPracticeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreDataPracticeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		37A6A51C2855098300DC238B /* CoreDataPracticeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataPracticeUITests.swift; sourceTree = "<group>"; };
 		37A6A51E2855098300DC238B /* CoreDataPracticeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataPracticeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		37A6A52C28550A5500DC238B /* SimpleTodoModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SimpleTodoModel.xcdatamodel; sourceTree = "<group>"; };
+		37A6A52F2855138900DC238B /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,7 @@
 		37A6A4F52855098000DC238B = {
 			isa = PBXGroup;
 			children = (
+				37A6A52B28550A5500DC238B /* SimpleTodoModel.xcdatamodeld */,
 				37A6A5002855098000DC238B /* CoreDataPractice */,
 				37A6A5112855098300DC238B /* CoreDataPracticeTests */,
 				37A6A51B2855098300DC238B /* CoreDataPracticeUITests */,
@@ -94,6 +99,7 @@
 		37A6A5002855098000DC238B /* CoreDataPractice */ = {
 			isa = PBXGroup;
 			children = (
+				37A6A52E2855136E00DC238B /* Managers */,
 				37A6A5012855098000DC238B /* CoreDataPracticeApp.swift */,
 				37A6A5032855098000DC238B /* ContentView.swift */,
 				37A6A5052855098200DC238B /* Assets.xcassets */,
@@ -125,6 +131,14 @@
 				37A6A51E2855098300DC238B /* CoreDataPracticeUITestsLaunchTests.swift */,
 			);
 			path = CoreDataPracticeUITests;
+			sourceTree = "<group>";
+		};
+		37A6A52E2855136E00DC238B /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				37A6A52F2855138900DC238B /* CoreDataManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +271,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37A6A52D28550A5500DC238B /* SimpleTodoModel.xcdatamodeld in Sources */,
 				37A6A5042855098000DC238B /* ContentView.swift in Sources */,
+				37A6A5302855138900DC238B /* CoreDataManager.swift in Sources */,
 				37A6A5022855098000DC238B /* CoreDataPracticeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -583,6 +599,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		37A6A52B28550A5500DC238B /* SimpleTodoModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				37A6A52C28550A5500DC238B /* SimpleTodoModel.xcdatamodel */,
+			);
+			currentVersion = 37A6A52C28550A5500DC238B /* SimpleTodoModel.xcdatamodel */;
+			path = SimpleTodoModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 37A6A4F62855098000DC238B /* Project object */;
 }
