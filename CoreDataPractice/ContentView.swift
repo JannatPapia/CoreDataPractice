@@ -79,18 +79,46 @@ struct ContentView: View {
         }
     }
     
-    private func deleteTask(at offsets: IndexSet) {
-        offsets.forEach { index in
-            let task = allTasks[index]
-            viewContex.delete(task)
-            
-            do {
-                try viewContex.save()
-            } catch {
-                print(error.localizedDescription)
-            }
-        }
+//    private func deleteTask(at offsets: IndexSet) {
+//        offsets.forEach { index in
+//            let task = allTasks[index]
+//            viewContex.delete(task)
+//            
+//            do {
+//                try viewContex.save()
+//            } catch {
+//                print(error.localizedDescription)
+//            }
+//        }
+//    }
+    
+    
+    
+    
+    
+    
+    
+    
+    private func deleteExercise(_ task: Task) { //I'm making an assumption that your model is called Exercise
+      withAnimation {
+          viewContex.delete(task)
+          
+          
+          do {
+              try viewContex.save()
+          } catch {
+              print(error.localizedDescription)
+          }
+ //         viewContex.save()
+      }
     }
+    
+//    private func delete(at index: Int){
+//        viewContex.remove(at: index)
+//    }
+    
+    
+    
     
     var body: some View {
         NavigationView {
@@ -120,6 +148,44 @@ struct ContentView: View {
                                 .fill(styleForPriority(task.priority!))
                                 .frame(width: 15, height: 15)
                             Spacer().frame(width: 20)
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                           
+                            Button(action: {
+                             //   deleteTask()
+                                deleteExercise(task)
+                            }, label: {
+                                Image(systemName: "trash")
+                             //   Label("", systemImage: "trash")
+                                .foregroundColor(.blue)
+                            })
+                            
+                            
+//                            Button(action: {
+//                                    viewContex.delete(allTasks)!
+//                                }, label: {
+//                                    Image(systemName:  "trash")
+//                             })
+                            
+                               // .contextMenu {
+//                                    Button( action: {
+//                                    viewContex(task)
+//                                }) {
+//                                    Image( systemImage: "trash")
+//                                }.foregroundColor(Color.blue)
+                            //}
+                            
+                            
+//                            Button(action: {viewContex(task)}) {//.firstIndex(where: {$0.id == task.id})!)}) {
+//                                Image(systemName: "trash")
+//                            }.foregroundColor(Color.blue)
+                            
+                            
                         Text(task.title ?? "")
                             
                             Spacer()
@@ -130,7 +196,7 @@ struct ContentView: View {
                                 }
                         }
                     }
-                    .onDelete(perform: deleteTask)
+             //       .onDelete(perform: deleteTask)
                 }
                 
             Spacer()
