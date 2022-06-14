@@ -54,10 +54,13 @@ struct ContentView: View  {
             task.priority = selectedPriority.rawValue
             task.dateCreated = Date()
             try viewContex.save()
-            title = ""
+            
+    //        title = ""
         } catch {
             print(error.localizedDescription)
         }
+        //MARK: use for  textfield clear
+        title = ""
     }
     
     
