@@ -33,7 +33,9 @@ extension Priority {
     }
 }
 
-struct ContentView: View {
+struct ContentView: View  {
+
+    
     
     @State private var title: String = ""
     @State private var selectedPriority: Priority = .medium
@@ -52,6 +54,7 @@ struct ContentView: View {
             task.priority = selectedPriority.rawValue
             task.dateCreated = Date()
             try viewContex.save()
+            title = ""
         } catch {
             print(error.localizedDescription)
         }
@@ -100,9 +103,9 @@ struct ContentView: View {
         
             VStack {
             TextField("Enter title", text: $title)
-                    .modifier(TextFieldClearButton(fieldText: $title))
-                    .multilineTextAlignment(.leading)
-     //               .modifier(ClearButton(text: $title))
+               //     .modifier(TextFieldClearButton(text: $title))
+//                    .multilineTextAlignment(.leading)
+//                    .modifier(ContentView(text: $title))
                 .textFieldStyle(.roundedBorder)
                 
             Picker("Priority", selection: $selectedPriority) {
