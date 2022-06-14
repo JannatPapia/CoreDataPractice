@@ -145,6 +145,7 @@ struct ContentView: View  {
                     .foregroundColor(Color.white)
                     .clipShape(RoundedRectangle(cornerRadius: 10.0, style: .continuous))
                 }
+                .disabled(!isThreeCharacter())
                 
                 List {
                     //allTasks aplly filter on it
