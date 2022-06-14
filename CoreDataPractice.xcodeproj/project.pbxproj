@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37A573A6285830A200E9E751 /* DoneTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A573A5285830A200E9E751 /* DoneTaskView.swift */; };
 		37A6A5022855098000DC238B /* CoreDataPracticeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A6A5012855098000DC238B /* CoreDataPracticeApp.swift */; };
 		37A6A5042855098000DC238B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A6A5032855098000DC238B /* ContentView.swift */; };
 		37A6A5062855098200DC238B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37A6A5052855098200DC238B /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		37A573A5285830A200E9E751 /* DoneTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneTaskView.swift; sourceTree = "<group>"; };
 		37A6A4FE2855098000DC238B /* CoreDataPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37A6A5012855098000DC238B /* CoreDataPracticeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataPracticeApp.swift; sourceTree = "<group>"; };
 		37A6A5032855098000DC238B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				37A6A52E2855136E00DC238B /* Managers */,
 				37A6A5012855098000DC238B /* CoreDataPracticeApp.swift */,
 				37A6A5032855098000DC238B /* ContentView.swift */,
+				37A573A5285830A200E9E751 /* DoneTaskView.swift */,
 				37A6A5052855098200DC238B /* Assets.xcassets */,
 				37A6A5072855098200DC238B /* Preview Content */,
 			);
@@ -271,6 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37A573A6285830A200E9E751 /* DoneTaskView.swift in Sources */,
 				37A6A52D28550A5500DC238B /* SimpleTodoModel.xcdatamodeld in Sources */,
 				37A6A5042855098000DC238B /* ContentView.swift in Sources */,
 				37A6A5302855138900DC238B /* CoreDataManager.swift in Sources */,

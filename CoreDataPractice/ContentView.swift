@@ -107,14 +107,19 @@ struct ContentView: View {
             }
             .pickerStyle(.segmented)
                 
-                Button("Save") {
+               // Button("Save") {
+                Button(action: {
                     saveTask()
-                }.padding(10)
+                }){
+                  //  saveTask()
+                Text("Save")
+                .padding(10)
+                
                     .frame(maxWidth: .infinity)
                     .background(Color.green)
                     .foregroundColor(Color.white)
                     .clipShape(RoundedRectangle(cornerRadius: 10.0, style: .continuous))
-            
+                }
                 
                 List {
                     //allTasks aplly filter on it
@@ -161,10 +166,7 @@ struct ContentView: View {
                                     Text("Done Task")
                                         .foregroundColor(.red)
                                 })
-                               
-                                
-                    )
-           
+                                                   )
             }
 }
 }

@@ -7,13 +7,9 @@
 
 import SwiftUI
 
-
-
 struct DoneTaskView: View {
-
     @Environment(\.managedObjectContext) private var viewContex
-    
-    @FetchRequest(entity: Task.entity(), sortDescriptors: [NSSortDescriptor(key: "dateCreated", ascending: false)]) private var allTasks: FetchedResults<Task>
+        @FetchRequest(entity: Task.entity(), sortDescriptors: [NSSortDescriptor(key: "dateCreated", ascending: false)]) private var allTasks: FetchedResults<Task>
 
     
     private func styleForPriority(_ value: String) -> Color {
@@ -56,9 +52,6 @@ struct DoneTaskView: View {
     var body: some View {
          
             VStack {
-                
-                
-                
                 List {
                     //allTasks aplly filter on it
                     ForEach(allTasks.filter({$0.isFavorite == true })) { task in
