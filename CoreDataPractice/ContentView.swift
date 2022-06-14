@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 enum Priority: String, Identifiable, CaseIterable {
     
     var id: UUID {
@@ -99,7 +100,11 @@ struct ContentView: View {
         
             VStack {
             TextField("Enter title", text: $title)
+                    .modifier(TextFieldClearButton(fieldText: $title))
+                    .multilineTextAlignment(.leading)
+     //               .modifier(ClearButton(text: $title))
                 .textFieldStyle(.roundedBorder)
+                
             Picker("Priority", selection: $selectedPriority) {
                 ForEach(Priority.allCases) { priority in
                     Text(priority.title).tag(priority)
