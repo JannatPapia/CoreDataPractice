@@ -64,6 +64,17 @@ struct ContentView: View  {
     }
     
     
+    
+    
+    private func isThreeCharacter() -> Bool {
+        // Check textField
+        if title.count >= 3 {
+            return true
+        }
+        return false
+    }
+    
+    
     private func styleForPriority(_ value: String) -> Color {
         let priority = Priority(rawValue: value)
         
@@ -105,7 +116,7 @@ struct ContentView: View  {
         NavigationView {  //its navigation bar so we can push view that will be easy
         
             VStack {
-            TextField("Enter title", text: $title)
+            TextField("Enter title...", text: $title)
                //     .modifier(TextFieldClearButton(text: $title))
 //                    .multilineTextAlignment(.leading)
 //                    .modifier(ContentView(text: $title))
@@ -120,14 +131,17 @@ struct ContentView: View  {
                 
                // Button("Save") {
                 Button(action: {
+                    if isThreeCharacter() {
                     saveTask()
+                    }
                 }){
                   //  saveTask()
                 Text("Save")
                 .padding(10)
                 
                     .frame(maxWidth: .infinity)
-                    .background(Color.green)
+                    .background(isThreeCharacter() ? Color.green : Color.green.opacity(0.5))
+ //                   .background(Color.green)
                     .foregroundColor(Color.white)
                     .clipShape(RoundedRectangle(cornerRadius: 10.0, style: .continuous))
                 }
