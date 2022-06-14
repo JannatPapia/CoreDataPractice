@@ -10,28 +10,11 @@ import SwiftUI
 
 
 struct DoneTaskView: View {
-    
-    @State private var title: String = ""
-    @State private var selectedPriority: Priority = .medium
+
     @Environment(\.managedObjectContext) private var viewContex
     
     @FetchRequest(entity: Task.entity(), sortDescriptors: [NSSortDescriptor(key: "dateCreated", ascending: false)]) private var allTasks: FetchedResults<Task>
-    
-    //   @State private var showFavView = false
-    
-    
-    private func saveTask() {
-        do {
-            let task = Task(context: viewContex)
-            task.title = title
-            task.priority = selectedPriority.rawValue
-            task.dateCreated = Date()
-            try viewContex.save()
-        } catch {
-            print(error.localizedDescription)
-        }
-    }
-    
+
     
     private func styleForPriority(_ value: String) -> Color {
         let priority = Priority(rawValue: value)
