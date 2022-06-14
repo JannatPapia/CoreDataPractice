@@ -40,13 +40,14 @@ struct ContentView: View {
     
     @FetchRequest(entity: Task.entity(), sortDescriptors: [NSSortDescriptor(key: "dateCreated", ascending: false)]) private var allTasks: FetchedResults<Task>
     
-    @State private var showFavView = false
+ //   @State private var showFavView = false
     
     
     private func saveTask() {
         do {
             let task = Task(context: viewContex)
             task.title = title
+            task.isFavorite = false
             task.priority = selectedPriority.rawValue
             task.dateCreated = Date()
             try viewContex.save()
@@ -73,7 +74,7 @@ struct ContentView: View {
     
     private func updateTask(_ task: Task) {
         task.isFavorite = !task.isFavorite
-        
+
         do {
             try viewContex.save()
         } catch {
@@ -81,26 +82,18 @@ struct ContentView: View {
         }
     }
     
-
     
     private func deleteExercise(_ task: Task) { //I'm making an assumption that your model is called Exercise
       withAnimation {
           viewContex.delete(task)
-          
-          
-          do {
+                    do {
               try viewContex.save()
           } catch {
               print(error.localizedDescription)
           }
- //         viewContex.save()
       }
     }
-    
-    
-    
-    
-    
+
     var body: some View {
         NavigationView {  //its navigation bar so we can push view that will be easy
         
@@ -125,7 +118,7 @@ struct ContentView: View {
                 
                 List {
                     //allTasks aplly filter on it
-                    ForEach(allTasks.filter({$0.isFavorite == false })) { task in
+                    ForEach(allTasks) { task in
                         HStack {
                             Circle()
                                 .fill(styleForPriority(task.priority!))
@@ -164,7 +157,7 @@ struct ContentView: View {
         .navigationBarItems(trailing:
 
                             NavigationLink(
-                                destination: DoneTaskView(), // <1>
+                                destination: EmptyView(), //DoneTaskView(), // <1>
                                 label: {
                                     Text("Done Task")
                                         .foregroundColor(.red)
@@ -172,8 +165,7 @@ struct ContentView: View {
                                 
                     )
            
-        
-    }
+            }
 }
 }
 
