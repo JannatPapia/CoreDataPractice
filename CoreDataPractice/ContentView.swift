@@ -118,7 +118,7 @@ struct ContentView: View {
                 
                 List {
                     //allTasks aplly filter on it
-                    ForEach(allTasks) { task in
+                    ForEach(allTasks.filter({$0.isFavorite == false})) { task in
                         HStack {
                             Circle()
                                 .fill(styleForPriority(task.priority!))
@@ -146,7 +146,6 @@ struct ContentView: View {
                                 }
                         }
                     }
-             //       .onDelete(perform: deleteTask)
                 }
                 
             Spacer()
@@ -157,11 +156,12 @@ struct ContentView: View {
         .navigationBarItems(trailing:
 
                             NavigationLink(
-                                destination: EmptyView(), //DoneTaskView(), // <1>
+                                destination: DoneTaskView().navigationTitle(Text("All Done Task")), // <1>
                                 label: {
                                     Text("Done Task")
                                         .foregroundColor(.red)
                                 })
+                               
                                 
                     )
            
